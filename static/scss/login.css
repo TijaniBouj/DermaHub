@@ -1,0 +1,215 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  /*10/16  10 dividido en 16 pixels*/
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size:16px;*/
+  line-height: 1.7;
+  color: #777;
+  box-sizing: border-box;
+}
+.background {
+  height: 100vh;
+  /*background-image: linear-gradient(to right bottom, rgba(20, 50, 87, 0.7), rgba(99, 38, 160, 0.7)), url('/static/images/1.jpg');*/
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+}
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+.heading-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInleft;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation: moveInright 2s ease-out;
+}
+@keyframes moveInleft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInright {
+  0% {
+    opacity: 1;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: tranlateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+footer {
+  color: white;
+  bottom: 1rem;
+  position: fixed;
+  width: 100%;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+}
+
+.btn.btn-white.btn-animated {
+  position: relative;
+  color: rgba(42, 180, 192, 0.725); /* Replace with your desired color */
+  background: #eee; /* Replace with your desired color */
+  text-decoration: none;
+  padding: 24px;
+  border-radius: 999px;
+  overflow: hidden;
+  mask-image: radial-gradient(white, black);
+  transition: all 150ms ease;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn.btn-white.btn-animated div {
+  position: relative;
+  background: #f0f0f0; /* Replace with your desired color */
+  padding: 12px 10px; /* Replace with your desired values */
+  border-radius: 999px;
+  box-shadow: inset 0 -8px 4px rgba(0, 169, 241, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn.btn-white.btn-animated:before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  box-shadow: 0 24px 32px 2px #68e0ed; /* Replace with your desired color */
+  animation: shinebright 4s linear infinite;
+  transition: all 0.2s ease;
+}
+
+.btn.btn-white.btn-animated:hover {
+  color: #f60707; /* Replace with your desired color */
+}
+
+.btn.btn-white.btn-animated:hover div {
+  box-shadow: inset 0 -8px 12px rgba(251, 2, 2, 0.1);
+}
+
+.btn.btn-white.btn-animated:hover:before {
+  animation-play-state: paused;
+  box-shadow: 0 24px 32px 12px #f50101; /* Replace with your desired color */
+}
+
+.btn.btn-white.btn-animated:active {
+  transform: scale(0.98) translateY(1px);
+}
+
+.btn.btn-white.btn-animated:active:before {
+  box-shadow: 0 24px 32px 42px #333; /* Replace with your desired color */
+}
+
+@keyframes shinebright {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-10px) rotate(90deg); /* Replace with your desired value */
+  }
+  75% {
+    transform: translateX(10px) rotate(270deg); /* Replace with your desired value */
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
+}

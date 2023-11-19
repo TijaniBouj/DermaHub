@@ -1,0 +1,47 @@
+{% load static %}
+<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.495/build/spline-viewer.js"></script>
+
+
+<!-- Link to your CSS file -->
+<link rel="stylesheet" type="text/css" href="{% static 'scss/login.css' %}">
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+
+   
+    <div class = "background">
+      
+         <spline-viewer url="https://prod.spline.design/qR2DsKzP62RsU7uo/scene.splinecode"></spline-viewer>
+        <div class="text-box">
+          <h1 class="heading-primary">
+            <span class="heading-primary-main">Health TRACK</span>
+            <span class="heading-primary-sub">Report day, weekly and monthly</span>
+          </h1>
+          {% if user.is_authenticated %}
+    
+          <button type="submit"><a href="{% url 'pages:signout' %}">SignOut</a></button>
+          {% else %}
+          <a href="{% url 'pages:signup' %}" class="btn btn-white btn-animated">Sign Up</a></button>
+          <br/>
+          <br/>
+
+          <a href="{% url 'pages:signin' %}" class ="btn btn-white btn-animated">Sign In</a></button>
+          {% endif %}
+        </div>
+    
+
+
+    
+</div>
+</body>
+</html>
