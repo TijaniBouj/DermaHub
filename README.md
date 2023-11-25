@@ -1,5 +1,6 @@
 # DermaHub
 
+
 DermaHub is a comprehensive web platform designed to provide valuable information about various cancer types, with a focus on blood, skin, and lung cancers. The platform incorporates cutting-edge computer vision algorithms for cancer detection, enhancing early diagnosis and increasing awareness about these critical health issues.
 
 ## Table of Contents
@@ -71,5 +72,6 @@ DermaHub is licensed under the [MIT License](LICENSE).
 ## Contact
 
 For inquiries and support, please contact us at support@dermahub.com. Visit our [Contact Page](https://www.dermahub.com/contact) for additional information.
+
 
 Thank you for using DermaHub! Together, let's raise awareness and promote early detection for a healthier future.
